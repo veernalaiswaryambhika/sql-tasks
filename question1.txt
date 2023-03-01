@@ -1,0 +1,251 @@
+SQL> connect
+Enter user-name: system
+Enter password:
+Connected.
+SQL> show user
+USER is "SYSTEM"
+
+//creating database Employee
+SQL>create database Employee
+
+//creating Employee_details
+SQL> create table Employee_details
+  2  (
+  3  Emp_id number(4),
+  4  Emp_name varchar2(20),
+  5  Job_name varchar2(20),
+  6  Manager_id number(4),
+  7  Hire_date date,
+  8  salary number(8),
+  9  Department_id number(5)
+ 10  );
+
+Table created.
+
+
+//Inserting data into Employee_details
+SQL> insert into Employee_details values(101,'ganga','analyst',12,'10-aug-22',45000,01);
+
+1 row created.
+
+SQL> insert into Employee_details values(102,'priya','developer',13,'25-aug-22',42000,02);
+
+1 row created.
+
+SQL> insert into Employee_details values(103,'jaanu','assistant_manager',14,'22-sep-20',50000,03);
+
+1 row created.
+
+SQL> insert into Employee_details values(104,'Varshitha','project_manager',15,'12-jan-20',50000,04);
+1 row created.
+
+SQL> insert into Employee_details values(104,'Varshitha','project_manager',15,'12-jan-20',50000,04);
+
+1 row created.
+
+SQL> insert into Employee_details values(114,'revathi','data_engineer',15,'12-jan-20',34000,05);
+
+1 row created.
+
+SQL> insert into Employee_details values(134,'deepika','data_engineer',15,'12-feb-20',89000,06);
+
+1 row created.
+
+SQL> insert into Employee_details values(134,'sravani','cheif_architect',18,'23-feb-20',48000,08);
+
+1 row created.
+
+SQL> insert into Employee_details values(176,'lalitha','software_developer',18,'15-aug-20',37000,10);
+
+1 row created.
+
+SQL> insert into Employee_details values(132,'ramareddy','android_developer',13,'23-aug-20',63000,11);
+
+1 row created.
+
+SQL> insert into Employee_details values(176,'shanker','operation_engineer',23,'13-aug-20',51000,23);
+
+1 row created.
+
+SQL> insert into Employee_details values(190,'vikas','cloud_engineer',23,'29-aug-20',55000,32);
+
+1 row created.
+
+SQL> select * from Employee_details
+  2  ;
+
+    EMP_ID EMP_NAME             JOB_NAME
+MANAGER_ID HIRE_DATE
+---------- -------------------- -------------------- ---------- ---------
+    SALARY DEPARTMENT_ID
+---------- -------------
+       101 ganga                analyst
+    12 10-AUG-22
+     45000             1
+
+       102 priya                developer
+    13 25-AUG-22
+     42000             2
+
+       103 jaanu                assistant_manager        14 22-SEP-20
+     50000             3
+
+
+    EMP_ID EMP_NAME             JOB_NAME
+MANAGER_ID HIRE_DATE
+---------- -------------------- -------------------- ---------- ---------
+    SALARY DEPARTMENT_ID
+---------- -------------
+       104 Varshitha            project_manager          15 12-JAN-20
+     50000             4
+
+       104 Varshitha            project_manager          15 12-JAN-20
+     50000             4
+
+       114 revathi              data_engineer            15 12-JAN-20
+     34000             5
+
+
+    EMP_ID EMP_NAME             JOB_NAME
+MANAGER_ID HIRE_DATE
+---------- -------------------- -------------------- ---------- ---------
+    SALARY DEPARTMENT_ID
+---------- -------------
+       134 deepika              data_engineer            15 12-FEB-20
+     89000             6
+
+       134 sravani              cheif_architect          18 23-FEB-20
+     48000             8
+
+       176 lalitha              software_developer       18 15-AUG-20
+     37000            10
+
+
+    EMP_ID EMP_NAME             JOB_NAME
+MANAGER_ID HIRE_DATE
+---------- -------------------- -------------------- ---------- ---------
+    SALARY DEPARTMENT_ID
+---------- -------------
+       132 ramareddy            android_developer        13 23-AUG-20
+     63000            11
+
+       176 shanker              operation_engineer       23 13-AUG-20
+     51000            23
+
+       190 vikas                cloud_engineer           23 29-AUG-20
+     55000            32
+
+
+12 rows selected.
+
+//salaries of all employees in Employee_details
+SQL> select Emp_id,salary from Employee_details;
+
+    EMP_ID     SALARY
+---------- ----------
+       101      45000
+       102      42000
+       103      50000
+       104      50000
+       104      50000
+       114      34000
+       134      89000
+       134      48000
+       176      37000
+       132      63000
+       176      51000
+
+    EMP_ID     SALARY
+---------- ----------
+       190      55000
+
+12 rows selected.
+
+//unique designation of Employees from Employee_details
+SQL> select Emp_id,Job_name from Employee_details;
+
+    EMP_ID JOB_NAME
+---------- --------------------
+       101 analyst
+       102 developer
+       103 assistant_manager
+       104 project_manager
+       104 project_manager
+       114 data_engineer
+       134 data_engineer
+       134 cheif_architect
+       176 software_developer
+       132 android_developer
+       176 operation_engineer
+
+    EMP_ID JOB_NAME
+---------- --------------------
+       190 cloud_engineer
+
+12 rows selected.
+ 
+
+//updating salary where Enp_name is priyanka
+SQL> update Employee_details set salary=70000 where Emp_name='priya';
+
+1 row updated.
+
+SQL> select * from Employee_details;
+
+    EMP_ID EMP_NAME             JOB_NAME             MANAGER_ID HIRE_DATE
+---------- -------------------- -------------------- ---------- ---------
+    SALARY DEPARTMENT_ID
+---------- -------------
+       101 Raj                  analyst                      12 10-AUG-22
+     45000             1
+
+       102 priya                developer                    13 25-AUG-22
+     70000             2
+
+       103 jaanu                assistant_manager            14 22-SEP-20
+     50000             3
+
+
+    EMP_ID EMP_NAME             JOB_NAME             MANAGER_ID HIRE_DATE
+---------- -------------------- -------------------- ---------- ---------
+    SALARY DEPARTMENT_ID
+---------- -------------
+       104 Varshitha            project_manager              15 12-JAN-20
+     50000             4
+
+       104 Varshitha            project_manager              15 12-JAN-20
+     50000             4
+
+       114 revathi              data_engineer                15 12-JAN-20
+     34000             5
+
+
+    EMP_ID EMP_NAME             JOB_NAME             MANAGER_ID HIRE_DATE
+---------- -------------------- -------------------- ---------- ---------
+    SALARY DEPARTMENT_ID
+---------- -------------
+       134 deepika              data_engineer                15 12-FEB-20
+     89000             6
+
+       134 sravani              cheif_architect              18 23-FEB-20
+     48000             8
+
+       176 lalitha              software_developer           18 15-AUG-20
+     37000            10
+
+
+    EMP_ID EMP_NAME             JOB_NAME             MANAGER_ID HIRE_DATE
+---------- -------------------- -------------------- ---------- ---------
+    SALARY DEPARTMENT_ID
+---------- -------------
+       132 ramareddy            android_developer            13 23-AUG-20
+     63000            11
+
+       176 shanker              operation_engineer           23 13-AUG-20
+     51000            23
+
+       190 vikas                cloud_engineer               23 29-AUG-20
+     55000            32
+
+
+12 rows selected.
