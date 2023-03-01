@@ -1,0 +1,165 @@
+1ANSWER)
+SQL> create database Employee
+
+2ANSWER)
+
+create table FootballVenue
+  2  (
+  3  venue_id number(6),
+  4  venue_name varchar2(10),
+  5  city_id number(7),
+  6  capacity number(7)
+  7  );
+
+Table created.
+
+
+3ANSWER)
+
+SQL> insert into FootballVenue values(
+  2  20001,
+  3  'France',
+  4  10003,
+  5  42115
+  6  );
+
+1 row created.
+
+SQL> insert into FootballVenue values(
+  2  20002,
+  3  'japan',
+  4  10004,
+  5  42116
+  6  );
+
+1 row created.
+
+SQL> insert into FootballVenue values(
+  2  20003,
+  3  'hyb',
+  4  10005,
+  5  42117
+  6  );
+
+1 row created.
+
+SQL> insert into FootballVenue values(
+  2  20004,
+  3  'kakinada',
+  4  10006,
+  5  42118
+  6  );
+
+1 row created.
+
+SQL> insert into FootballVenue values(
+  2  20005,
+  3  'Australia',
+  4  10007,
+  5  42119
+  6  );
+
+1 row created.
+
+SQL> insert into FootballVenue values(
+  2  20006,
+  3  'Delhi',
+  4  10008,
+  5  42120
+  6  );
+
+1 row created.
+
+SQL> insert into FootballVenue values(
+  2  20008,
+  3  'Bangalore',
+  4  10009,
+  5  42121
+  6  );
+
+1 row created.
+
+SQL> insert into FootballVenue values(
+  2  20009,
+  3  'Karnataka',
+  4  10010,
+  5  42122
+  6  );
+
+1 row created.
+SQL> insert into FootballVenue values(
+  2  20010,
+  3  'rashtra',
+  4  10011,
+  5  42123
+  6  );
+
+1 row created.
+
+SQL> insert into FootballVenue values(
+  2  20011,
+  3  'elur',
+  4  10012,
+  5  42124
+  6  );
+
+1 row created.
+
+SQL> select * from FootballVenue;
+
+  VENUE_ID VENUE_NAME    CITY_ID   CAPACITY
+---------- ---------- ---------- ----------
+     20001 France          10003      42115
+     20002 japan           10004      42116
+     20003 hyb             10005      42117
+     20004 kakinada        10006      42118
+     20005 Australia       10007      42119
+     20006 Delhi           10008      42120
+     20008 Bangalore       10009      42121
+     20009 Karnataka       10010      42122
+     20010 rashtra         10011      42123
+     20011 elur            10012      42124
+
+10 rows selected.
+
+4 ANSWER)
+
+SQL> select venue_name,capacity from FootballVenue;
+
+VENUE_NAME   CAPACITY
+---------- ----------
+France          42115
+japan           42116
+hyb             42117
+kakinada        42118
+Australia       42119
+Delhi           42120
+Bangalore       42121
+Karnataka       42122
+rashtra         42123
+elur            42124
+
+10 rows selected.
+
+
+5 ANSWER)
+SQL>delete from FootballVenue where venue_name='Australia';
+
+1 row deleted.
+
+SQL> select * from FootballVenue;
+
+  VENUE_ID VENUE_NAME    CITY_ID   CAPACITY
+---------- ---------- ---------- ----------
+     20001 France          10003      42115
+     20002 japan           10004      42116
+     20003 hyb             10005      42117
+     20004 kakinada        10006      42118
+     20006 Delhi           10008      42120
+     20008 Bangalore       10009      42121
+     20009 Karnataka       10010      42122
+     20010 rashtra         10011      42123
+     20011 elur            10012      42124
+
+9 rows selected.
+
